@@ -15,7 +15,7 @@ defmodule ExMon.Game.Actions.Heal do
   defp calculate_total_life(life), do: Enum.random(@heal_power) + life
 
   defp set_life(life, player) when life > 100, do: update_player_life(player, 100)
-  defp set_life(life, player) when life > 100, do: update_player_life(player, life)
+  defp set_life(life, player), do: update_player_life(player, life)
 
   defp update_player_life(player, life) do
     player
