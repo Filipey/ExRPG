@@ -15,7 +15,7 @@ defmodule ExMon do
     |> create_player(:heal, :kick, @computer_name)
     |> Game.start(player)
 
-    Status.print_round_message()
+    Status.print_round_message(Game.info())
   end
 
   def make_move(move) do
@@ -31,5 +31,7 @@ defmodule ExMon do
       :move_heal -> "Healing..."
       move -> Actions.attack(move)
     end
+
+    Status.print_round_message(Game.info())
   end
 end
